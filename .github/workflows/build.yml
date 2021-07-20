@@ -9,6 +9,7 @@ jobs:
   build:
     name: ${{ matrix.os }} with ${{ matrix.python }}
     runs-on: ${{ matrix.os }}
+    env: PYTHON_VERSION: ${{ matrix.python }}
     strategy:
       fail-fast: false
       matrix:
@@ -17,6 +18,8 @@ jobs:
     steps:
     - name: Print Python version
       run: python -V
+    - name: Print env
+      run: env
     - name: Checkout master branch
       uses: actions/checkout@v2
     - name: Run the script
