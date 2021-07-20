@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-	python: [2.7, 3.6, 3.7, 3.8]
+        python: [2.7, 3.6, 3.7, 3.8]
     steps:
     - name: Print Python version
       run: python -V
